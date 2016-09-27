@@ -12,6 +12,12 @@ namespace Lab
 			DigitalO dout = new DigitalO();
 			dOut.openChannel();
 			dOut.WriteData(0); // 0: fan/heater off, 1: fan on, 2: heater on, 3: fan/heater on
+
+			/*
+			AnalogI aIn = new AnalogI();
+			aIn.OpenChannel();
+			aIn.ReadData();
+			*/
 		}
 	}
 }

@@ -25,7 +25,12 @@ namespace Lab
 
       public void ReadData()
       {
+          data = reader.ReadWaveform(samplesPerChannel);
 
+          for(int i = 0; i < samplesPerChannel; i++)
+            Console.WriteLine("Sample{0}=>time={1}, value{2}", i +1, data.Samples[i].TimeStamp, data.Samples[i].Value);
+          //Clear the Task
+          analogIn.Dispose();
 
       }
   }
