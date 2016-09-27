@@ -22,6 +22,7 @@ namespace Lab
 			writer = new DigitalSingleChannelWriter(digitalOut.Stream);
 		}
 
+
 		public void WriteData(int length)
 		{
 			//call WriteSingleSamplePort method to write data to the channel
