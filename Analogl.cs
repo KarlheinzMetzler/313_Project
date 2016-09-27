@@ -19,8 +19,12 @@ namespace Lab
 
       public void OpenChannel()
       {
-
-
+            //create a new analog inputChannel called "Ainport0"
+            analogIn.AIChannels.CreateVoltageChannel("Dev0/ai0", "Ainport0", AITerminalConfiguration.Rse, -10.0, 10.0, AIVoltageUnits.volts);
+            //configure timing specs
+            analogIn.Timing.ConfigureSampleClock("", 100.0, SampleClockActiveEdge.Rising, SampleQuantityMode.FiniteSamples, samplesPerChannel);
+            //Initialise the single analog input channel reader
+            reader = new AnalogSingleChannelReader(analogIn.Stream);
       }
 
       public void ReadData()
